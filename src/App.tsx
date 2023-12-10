@@ -74,29 +74,29 @@ const MyComponent = () => {
     // Call the fetchData function when the component mounts
     fetchData();
 
-    // const options = {
-    //   root: null,
-    //   rootMargin: '0px',
-    //   threshold: 1.0,
-    // };
-    // const handleIntersection = (entries: any) => {
-    //   const [entry] = entries;
-    //   if (entry.isIntersecting) {
-    //     setOffset((offset) => offset + 1);
-    //   }
-    // };
+    const options = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 1.0,
+    };
+    const handleIntersection = (entries: any) => {
+      const [entry] = entries;
+      if (entry.isIntersecting) {
+        setOffset((offset) => offset + 1);
+      }
+    };
 
-    // const observer = new IntersectionObserver(handleIntersection, options);
-    // if (loaderRef.current) {
-    //   observer.observe(loaderRef.current);
-    // }
+    const observer = new IntersectionObserver(handleIntersection, options);
+    if (loaderRef.current) {
+      observer.observe(loaderRef.current);
+    }
     
-    // return () => {
-    //   console.log("UnMouted")
-    //   if (loaderRef.current) {
-    //     observer.unobserve(loaderRef.current);
-    //   }
-    // }
+    return () => {
+      console.log("UnMouted")
+      if (loaderRef.current) {
+        observer.unobserve(loaderRef.current);
+      }
+    }
 
   }, []); 
 
