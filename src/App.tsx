@@ -159,7 +159,7 @@ const MyComponent = () => {
   return (
     <div>
       <div className='wrapper'>
-       <h1>Danh sach san pham</h1>
+       <h1>Danh sach san pham test</h1>
        {error
          ? <div>Error</div>
          : <div>
